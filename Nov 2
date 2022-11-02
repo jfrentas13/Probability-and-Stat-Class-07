@@ -1,0 +1,40 @@
+
+R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> Author: Javier Rentas Date: 11/2/22 Purpose Chi-Square Analysis
+Error: unexpected symbol in "Author: Javier Rentas"
+> # Reading teh sample data
+> data_frame <- read.csv("https://goo.gl/j6lRXD")
+> 
+
+> table(data_frame$treatment, data_frame$improvement)
+             
+              improved not-improved
+  not-treated       26           29
+  treated           35           15
+> 
+
+> chisq.test(data_frame$treatment, data_frame$improvement, correct=FALSE)
+
+        Pearson's Chi-squared test
+
+data:  data_frame$treatment and data_frame$improvement
+X-squared = 5.5569, df = 1, p-value = 0.01841
+
+> 
